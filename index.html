@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trần Minh Khoa | Profile Cá Nhân</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Be Vietnam Pro',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* PARTICLES */
+
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#00d4ff;
+    border-radius:50%;
+    opacity:0.5;
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+    from{
+        transform:translateY(100vh);
+    }
+
+    to{
+        transform:translateY(-100px);
+    }
+
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00d5ff25;
+    filter:blur(120px);
+    top:-200px;
+    left:-200px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#7c3aed33;
+    filter:blur(120px);
+    bottom:-200px;
+    right:-200px;
+    z-index:-1;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    background:rgba(5,8,22,0.7);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav{
+    max-width:1300px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:800;
+    color:#00d4ff;
+    letter-spacing:2px;
+}
+
+.menu{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+    font-weight:500;
+    position:relative;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:#00d4ff;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+.menu a:hover{
+    color:#00d4ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:130px 20px 80px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.avatar{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:auto;
+    border:5px solid #00d4ff;
+
+    box-shadow:
+    0 0 25px rgba(0,212,255,0.6),
+    0 0 60px rgba(0,212,255,0.3),
+    0 0 100px rgba(0,212,255,0.15);
+
+    margin-bottom:35px;
+
+    animation:float 4s ease-in-out infinite;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.hero h1{
+    font-size:75px;
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:#00d4ff;
+}
+
+.typing{
+    color:#00d4ff;
+    font-size:24px;
+    margin-bottom:25px;
+    height:35px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    line-height:1.9;
+    font-size:20px;
+    margin-bottom:40px;
+}
+
+/* BUTTON */
+
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 32px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.35s;
+}
+
+.btn-primary{
+    background:#00d4ff;
+    color:#05111c;
+}
+
+.btn-primary:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,212,255,0.45);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:black;
+}
+
+/* SECTION */
+
+.section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.title h2{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.title p{
+    color:#94a3b8;
+    font-size:17px;
+}
+
+/* STATUS */
+
+.status-bar{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.status-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.status-card::before{
+    content:"";
+    position:absolute;
+    width:140px;
+    height:140px;
+    background:#00d4ff12;
+    border-radius:50%;
+    top:-60px;
+    right:-60px;
+}
+
+.status-card:hover{
+    transform:translateY(-10px);
+    border-color:#00d4ff;
+    box-shadow:0 0 35px rgba(0,212,255,0.2);
+}
+
+.status-card h3{
+    margin-bottom:15px;
+    color:#00d4ff;
+    font-size:24px;
+}
+
+.status-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:35px;
+    border-radius:25px;
+    transition:0.4s;
+    backdrop-filter:blur(12px);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#00d4ff15;
+    border-radius:50%;
+    top:-50px;
+    right:-50px;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    border-color:#00d4ff;
+    box-shadow:0 0 35px rgba(0,212,255,0.2);
+}
+
+.card .icon{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:30px;
+    top:0;
+    width:3px;
+    height:100%;
+    background:linear-gradient(#00d4ff,#7c3aed);
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:90px;
+    margin-bottom:45px;
+}
+
+.timeline-dot{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#00d4ff;
+    position:absolute;
+    left:21px;
+    top:10px;
+    box-shadow:0 0 20px #00d4ff;
+}
+
+.timeline-content{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+}
+
+.timeline-content:hover{
+    transform:translateY(-8px);
+    border-color:#00d4ff;
+    box-shadow:0 0 30px rgba(0,212,255,0.2);
+}
+
+.timeline-year{
+    color:#00d4ff;
+    font-weight:700;
+    display:block;
+    margin-bottom:12px;
+}
+
+.timeline-content h3{
+    margin-bottom:12px;
+    font-size:26px;
+}
+
+.timeline-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* SOCIAL */
+
+.socials{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.social{
+    width:220px;
+    min-height:220px;
+    padding:30px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:0.4s;
+    backdrop-filter:blur(10px);
+}
+
+.social:hover{
+    transform:translateY(-12px) scale(1.03);
+    border-color:#00d4ff;
+    box-shadow:0 0 35px rgba(0,212,255,0.3);
+}
+
+.social-icon{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:35px;
+    margin-bottom:20px;
+    transition:0.4s;
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.zalo{
+    background:#0068ff;
+    font-size:18px;
+    font-weight:700;
+}
+
+.email{
+    background:#ff9800;
+}
+
+.tiktok{
+    background:#111;
+    border:2px solid white;
+}
+
+.social:hover .social-icon{
+    transform:rotate(8deg) scale(1.1);
+}
+
+.social h3{
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+.social-text{
+    color:#94a3b8;
+    text-align:center;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    background:linear-gradient(135deg,#00d4ff22,#7c3aed22);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:70px 30px;
+    border-radius:35px;
+    text-align:center;
+}
+
+.contact-box h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.contact-box p{
+    color:#cbd5e1;
+    line-height:1.9;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+}
+
+.phone{
+    font-size:42px;
+    color:#00d4ff;
+    font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu{
+    display:none;
+}
+
+.hero h1{
+    font-size:46px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.typing{
+    font-size:18px;
+}
+
+.avatar{
+    width:160px;
+    height:160px;
+}
+
+.title h2{
+    font-size:38px;
+}
+
+.contact-box h2{
+    font-size:35px;
+}
+
+.phone{
+    font-size:28px;
+}
+
+.timeline-item{
+    padding-left:70px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<header>
+
+    <div class="nav">
+
+        <div class="logo">
+            MK PROFILE
+        </div>
+
+        <div class="menu">
+
+            <a href="#skills">Kỹ Năng</a>
+            <a href="#education">Học Tập</a>
+            <a href="#social">Mạng Xã Hội</a>
+            <a href="#contact">Liên Hệ</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="avatar">
+
+            <img src="https://raw.githubusercontent.com/Minhkhoa0611/CONGTYXAYDUNGMKHOME/refs/heads/main/IMG_1055.jpeg">
+
+        </div>
+
+        <h1>
+            Trần Minh <span>Khoa</span>
+        </h1>
+
+        <div class="typing" id="typing"></div>
+
+        <p>
+            Kỹ sư xây dựng • Đam mê thiết kế • Yêu sáng tạo • 
+            Luôn muốn tạo ra những công trình mang dấu ấn riêng.
+            <br><br>
+
+            “Một công trình đẹp không chỉ nằm ở vật liệu.
+            Mà nằm ở tư duy của người tạo ra nó.”
+            <br><br>
+
+            <span style="color:#00d4ff;">
+                “Thành công không đến từ may mắn.
+                Nó đến từ những ngày không ai thấy mình cố gắng.”
+            </span>
+        </p>
+
+        <div class="btn-group">
+
+            <a href="tel:0867544809" class="btn btn-primary">
+                📞 Gọi Ngay
+            </a>
+
+            <a href="#social" class="btn btn-outline">
+                🌐 Kết Nối
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" style="padding-top:0;">
+
+    <div class="container">
+
+        <div class="status-bar">
+
+            <div class="status-card">
+
+                <h3>🔥 Current Focus</h3>
+
+                <p>
+                    Xây dựng thương hiệu cá nhân & phát triển MKHOME
+                </p>
+
+            </div>
+
+            <div class="status-card">
+
+                <h3>🚀 Future Goal</h3>
+
+                <p>
+                    Tạo ra những công trình có dấu ấn riêng tại Việt Nam
+                </p>
+
+            </div>
+
+            <div class="status-card">
+
+                <h3>⚡ Mindset</h3>
+
+                <p>
+                    Không chạy theo số đông. Chạy theo giá trị thật.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div style="
+        margin-top:40px;
+        text-align:center;
+        font-size:22px;
+        line-height:1.8;
+        color:#cbd5e1;
+        font-style:italic;
+        ">
+
+            “Người xây được tương lai,
+            là người dám đặt viên gạch đầu tiên.”
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="skills">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>Kỹ Năng</h2>
+
+            <p>
+                Không chỉ xây công trình. Mà còn xây giá trị 🔥
+            </p>
+
+        </div>
+
+        <div style="
+        text-align:center;
+        max-width:800px;
+        margin:auto;
+        margin-top:-30px;
+        margin-bottom:50px;
+        line-height:1.9;
+        font-size:18px;
+        color:#cbd5e1;
+        ">
+
+            “Kỹ năng có thể học theo thời gian.
+            Nhưng tư duy và bản lĩnh mới là thứ tạo nên khác biệt.”
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <div class="icon">🏠</div>
+
+                <h3>Thiết Kế Nhà</h3>
+
+                <p>
+                    Thiết kế không gian sống hiện đại, tối ưu công năng và thẩm mỹ.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📐</div>
+
+                <h3>Kỹ Thuật Xây Dựng</h3>
+
+                <p>
+                    Nắm vững kiến thức xây dựng dân dụng và triển khai công trình thực tế.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">💡</div>
+
+                <h3>Tư Duy Sáng Tạo</h3>
+
+                <p>
+                    Luôn tìm kiếm ý tưởng mới thay vì đi theo lối mòn cũ.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">🤝</div>
+
+                <h3>Làm Việc Nhóm</h3>
+
+                <p>
+                    Khả năng phối hợp và làm việc nhóm hiệu quả trong dự án.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="education">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>Quá Trình Học Tập</h2>
+
+            <p>
+                Hành trình học tập là nền móng cho mọi công trình tương lai 📚
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2008 - 2013
+                    </span>
+
+                    <h3>
+                        Trường Tiểu Học Ninh Bình
+                    </h3>
+
+                    <p>
+                        Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
+                        <br>
+                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2013 - 2017
+                    </span>
+
+                    <h3>
+                        Trường THCS Nguyễn Gia Thiều
+                    </h3>
+
+                    <p>
+                        Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
+                        <br>
+                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2017 - 2020
+                    </span>
+
+                    <h3>
+                        Trường THPT Trần Cao Vân
+                    </h3>
+
+                    <p>
+                        Thị xã Ninh Hoà, Tỉnh Khánh Hoà
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2020 - 2024
+                    </span>
+
+                    <h3>
+                        Đại Học Nha Trang
+                    </h3>
+
+                    <p>
+                        Ngành Kỹ Thuật Xây Dựng (Dân Dụng)
+                        <br>
+                        TP Nha Trang, Tỉnh Khánh Hoà
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="
+        max-width:900px;
+        margin:60px auto 0;
+        text-align:center;
+        line-height:1.9;
+        font-size:22px;
+        color:#cbd5e1;
+        font-style:italic;
+        ">
+
+            “Kiến thức là nền móng.
+            Kinh nghiệm là thép chịu lực.
+            Và ý chí là thứ giữ cả công trình đứng vững.”
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="social">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>Mạng Xã Hội</h2>
+
+            <p>
+                Kết nối để xem thêm những điều thú vị 😎
+            </p>
+
+        </div>
+
+        <div class="socials">
+
+            <a href="https://www.facebook.com/share/1BRUi9UxEb/?mibextid=wwXIfr"
+            target="_blank"
+            class="social">
+
+                <span class="social-icon facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </span>
+
+                <h3>Facebook</h3>
+
+                <p class="social-text">
+                    Trần Minh Khoa
+                </p>
+
+            </a>
+
+            <a href="https://zalo.me/0867544809"
+            target="_blank"
+            class="social">
+
+                <span class="social-icon zalo">
+                    Zalo
+                </span>
+
+                <h3>Zalo</h3>
+
+                <p class="social-text">
+                    0867 544 809
+                </p>
+
+            </a>
+
+            <a href="https://www.tiktok.com/@khoa200206"
+            target="_blank"
+            class="social">
+
+                <span class="social-icon tiktok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </span>
+
+                <h3>TikTok</h3>
+
+                <p class="social-text">
+                    @khoa200206
+                </p>
+
+            </a>
+
+            <a href="mailto:khoaminhtran9@gmail.com"
+            class="social">
+
+                <span class="social-icon email">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <h3>Email</h3>
+
+                <p class="social-text">
+                    khoaminhtran9@gmail.com
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Liên Hệ Với Tôi</h2>
+
+            <p>
+                Nếu bạn cần trao đổi về xây dựng, thiết kế,
+                hợp tác dự án hoặc chỉ đơn giản là kết nối —
+                cứ liên hệ 😄
+            </p>
+
+            <div class="phone">
+                📞 0867 544 809
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div style="
+padding:40px 20px 10px;
+text-align:center;
+font-size:18px;
+color:#94a3b8;
+line-height:1.9;
+">
+
+    “Một ngày nào đó,
+    những điều từng bị xem là viển vông
+    sẽ trở thành thứ khiến người khác ngước nhìn.”
+
+</div>
+
+<footer>
+
+    © 2026 Trần Minh Khoa — Built with passion ⚡
+
+</footer>
+
+<script>
+
+const text = [
+    "Kỹ Sư Xây Dựng",
+    "Designer",
+    "Creative Thinker",
+    "MKHOME Founder"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+    if(count === text.length){
+        count = 0;
+    }
+
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("typing").textContent = letter;
+
+    if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type,1000);
+
+    }else{
+
+        setTimeout(type,80);
+
+    }
+
+})();
+
+const particles = document.getElementById("particles");
+
+for(let i=0;i<60;i++){
+
+    const particle = document.createElement("div");
+
+    particle.classList.add("particle");
+
+    particle.style.left = Math.random()*100 + "vw";
+
+    particle.style.animationDuration =
+    (Math.random()*10 + 8) + "s";
+
+    particle.style.opacity = Math.random();
+
+    particle.style.width =
+    particle.style.height =
+    Math.random()*5 + 2 + "px";
+
+    particles.appendChild(particle);
+
+}
+
+</script>
+
+</body>
+</html>

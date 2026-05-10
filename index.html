@@ -114,13 +114,11 @@ header{
     font-size:32px;
     font-weight:800;
     color:#00d4ff;
-    letter-spacing:2px;
 }
 
 .menu{
     display:flex;
     gap:28px;
-    flex-wrap:wrap;
 }
 
 .menu a{
@@ -128,22 +126,6 @@ header{
     color:white;
     transition:0.3s;
     font-weight:500;
-    position:relative;
-}
-
-.menu a::after{
-    content:"";
-    position:absolute;
-    width:0%;
-    height:2px;
-    background:#00d4ff;
-    left:0;
-    bottom:-6px;
-    transition:0.3s;
-}
-
-.menu a:hover::after{
-    width:100%;
 }
 
 .menu a:hover{
@@ -172,14 +154,8 @@ header{
     overflow:hidden;
     margin:auto;
     border:5px solid #00d4ff;
-
-    box-shadow:
-    0 0 25px rgba(0,212,255,0.6),
-    0 0 60px rgba(0,212,255,0.3),
-    0 0 100px rgba(0,212,255,0.15);
-
+    box-shadow:0 0 40px rgba(0,212,255,0.4);
     margin-bottom:35px;
-
     animation:float 4s ease-in-out infinite;
 }
 
@@ -208,7 +184,6 @@ header{
 .hero h1{
     font-size:75px;
     margin-bottom:20px;
-    line-height:1.1;
 }
 
 .hero h1 span{
@@ -226,7 +201,6 @@ header{
     color:#cbd5e1;
     line-height:1.9;
     font-size:20px;
-    margin-bottom:40px;
 }
 
 /* SECTION */
@@ -252,7 +226,6 @@ header{
 
 .title p{
     color:#94a3b8;
-    font-size:17px;
 }
 
 /* GRID */
@@ -273,7 +246,7 @@ header{
 }
 
 .card:hover{
-    transform:translateY(-12px);
+    transform:translateY(-10px);
     border-color:#00d4ff;
     box-shadow:0 0 35px rgba(0,212,255,0.2);
 }
@@ -325,7 +298,6 @@ header{
     position:absolute;
     left:21px;
     top:10px;
-    box-shadow:0 0 20px #00d4ff;
 }
 
 .timeline-content{
@@ -333,7 +305,6 @@ header{
     border:1px solid rgba(255,255,255,0.08);
     padding:30px;
     border-radius:25px;
-    backdrop-filter:blur(10px);
 }
 
 .timeline-year{
@@ -345,7 +316,6 @@ header{
 
 .timeline-content h3{
     margin-bottom:12px;
-    font-size:26px;
 }
 
 .timeline-content p{
@@ -379,9 +349,8 @@ header{
 }
 
 .social:hover{
-    transform:translateY(-12px) scale(1.03);
+    transform:translateY(-10px);
     border-color:#00d4ff;
-    box-shadow:0 0 35px rgba(0,212,255,0.3);
 }
 
 .social-icon{
@@ -421,7 +390,7 @@ header{
     font-size:14px;
 }
 
-/* MINI MUSIC PLAYER */
+/* MUSIC BUTTON */
 
 .music-player{
     position:fixed;
@@ -429,15 +398,15 @@ header{
     bottom:18px;
     z-index:9999;
 
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.1);
-
-    backdrop-filter:blur(12px);
-
     width:58px;
     height:58px;
 
     border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
 
     display:flex;
     align-items:center;
@@ -445,15 +414,12 @@ header{
 
     cursor:pointer;
 
-    transition:0.35s;
-
-    box-shadow:0 0 20px rgba(0,212,255,0.15);
+    transition:0.3s;
 }
 
 .music-player:hover{
     transform:scale(1.08);
     border-color:#00d4ff;
-    box-shadow:0 0 30px rgba(0,212,255,0.3);
 }
 
 .music-icon{
@@ -485,10 +451,6 @@ header{
         transform:rotate(360deg);
     }
 
-}
-
-#musicText{
-    display:none;
 }
 
 footer{
@@ -537,10 +499,10 @@ footer{
 
 <div id="particles"></div>
 
-<!-- MUSIC -->
+<!-- NHẠC -->
 
 <audio id="bgMusic" autoplay loop>
-    <source src="https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/main/music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-player" onclick="toggleMusic()">
@@ -577,7 +539,7 @@ footer{
 
         <div class="avatar">
 
-            <img src="https://raw.githubusercontent.com/Minhkhoa0611/CONGTYXAYDUNGMKHOME/refs/heads/main/IMG_1055.jpeg">
+            <img src="IMG_1055.jpeg">
 
         </div>
 
@@ -663,11 +625,6 @@ footer{
 
             <h2>Quá Trình Học Tập</h2>
 
-            <p>
-                “Kiến thức là nền móng.
-                Ý chí là thứ giữ công trình đứng vững.”
-            </p>
-
         </div>
 
         <div class="timeline">
@@ -688,8 +645,6 @@ footer{
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                        <br>
-                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -712,8 +667,6 @@ footer{
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                        <br>
-                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -780,10 +733,6 @@ footer{
 
             <h2>Mạng Xã Hội</h2>
 
-            <p>
-                Kết nối và theo dõi hành trình của mình 😎
-            </p>
-
         </div>
 
         <div class="socials">
@@ -799,7 +748,7 @@ footer{
                 <h3>Facebook</h3>
 
                 <p class="social-text">
-                    facebook.com/TranMinhKhoa
+                    facebook.com
                 </p>
 
             </a>
@@ -938,7 +887,21 @@ let isPlaying = true;
 
 window.addEventListener("load", () => {
 
-    music.play().catch(() => {});
+    const playPromise = music.play();
+
+    if(playPromise !== undefined){
+
+        playPromise.catch(() => {
+
+            document.body.addEventListener("click", () => {
+
+                music.play();
+
+            }, { once:true });
+
+        });
+
+    }
 
 });
 
@@ -966,3 +929,4 @@ function toggleMusic(){
 
 </body>
 </html>
+V1

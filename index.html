@@ -229,43 +229,6 @@ header{
     margin-bottom:40px;
 }
 
-/* BUTTON */
-
-.btn-group{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:16px 32px;
-    border-radius:15px;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.35s;
-}
-
-.btn-primary{
-    background:#00d4ff;
-    color:#05111c;
-}
-
-.btn-primary:hover{
-    transform:translateY(-7px);
-    box-shadow:0 15px 35px rgba(0,212,255,0.45);
-}
-
-.btn-outline{
-    border:2px solid white;
-    color:white;
-}
-
-.btn-outline:hover{
-    background:white;
-    color:black;
-}
-
 /* SECTION */
 
 .section{
@@ -292,53 +255,6 @@ header{
     font-size:17px;
 }
 
-/* STATUS */
-
-.status-bar{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-}
-
-.status-card{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:30px;
-    border-radius:25px;
-    backdrop-filter:blur(10px);
-    transition:0.4s;
-    position:relative;
-    overflow:hidden;
-}
-
-.status-card::before{
-    content:"";
-    position:absolute;
-    width:140px;
-    height:140px;
-    background:#00d4ff12;
-    border-radius:50%;
-    top:-60px;
-    right:-60px;
-}
-
-.status-card:hover{
-    transform:translateY(-10px);
-    border-color:#00d4ff;
-    box-shadow:0 0 35px rgba(0,212,255,0.2);
-}
-
-.status-card h3{
-    margin-bottom:15px;
-    color:#00d4ff;
-    font-size:24px;
-}
-
-.status-card p{
-    color:#cbd5e1;
-    line-height:1.8;
-}
-
 /* GRID */
 
 .grid{
@@ -354,19 +270,6 @@ header{
     border-radius:25px;
     transition:0.4s;
     backdrop-filter:blur(12px);
-    position:relative;
-    overflow:hidden;
-}
-
-.card::before{
-    content:"";
-    position:absolute;
-    width:120px;
-    height:120px;
-    background:#00d4ff15;
-    border-radius:50%;
-    top:-50px;
-    right:-50px;
 }
 
 .card:hover{
@@ -431,20 +334,6 @@ header{
     padding:30px;
     border-radius:25px;
     backdrop-filter:blur(10px);
-    transition:0.4s;
-}
-
-.timeline-content:hover{
-    transform:translateY(-8px);
-    border-color:#00d4ff;
-    box-shadow:0 0 30px rgba(0,212,255,0.2);
-}
-
-.timeline-year{
-    color:#00d4ff;
-    font-weight:700;
-    display:block;
-    margin-bottom:12px;
 }
 
 .timeline-content h3{
@@ -480,7 +369,6 @@ header{
     justify-content:center;
     align-items:center;
     transition:0.4s;
-    backdrop-filter:blur(10px);
 }
 
 .social:hover{
@@ -498,7 +386,6 @@ header{
     justify-content:center;
     font-size:35px;
     margin-bottom:20px;
-    transition:0.4s;
 }
 
 .facebook{
@@ -520,52 +407,75 @@ header{
     border:2px solid white;
 }
 
-.social:hover .social-icon{
-    transform:rotate(8deg) scale(1.1);
+/* MINI MUSIC PLAYER */
+
+.music-player{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:9999;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    box-shadow:0 0 20px rgba(0,212,255,0.15);
 }
 
-.social h3{
-    margin-bottom:12px;
-    font-size:24px;
+.music-player:hover{
+    transform:scale(1.08);
+    border-color:#00d4ff;
+    box-shadow:0 0 30px rgba(0,212,255,0.3);
 }
 
-.social-text{
-    color:#94a3b8;
-    text-align:center;
-    line-height:1.6;
-    font-size:14px;
+.music-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+
+    background:#00d4ff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#05111c;
+    font-size:16px;
 }
 
-/* CONTACT */
-
-.contact-box{
-    background:linear-gradient(135deg,#00d4ff22,#7c3aed22);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:70px 30px;
-    border-radius:35px;
-    text-align:center;
+.music-icon.playing{
+    animation:spin 3s linear infinite;
 }
 
-.contact-box h2{
-    font-size:48px;
-    margin-bottom:20px;
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
 }
 
-.contact-box p{
-    color:#cbd5e1;
-    line-height:1.9;
-    max-width:700px;
-    margin:auto;
-    margin-bottom:35px;
+#musicText{
+    display:none;
 }
-
-.phone{
-    font-size:42px;
-    color:#00d4ff;
-    font-weight:800;
-}
-
-/* FOOTER */
 
 footer{
     padding:40px 20px;
@@ -603,18 +513,6 @@ footer{
     font-size:38px;
 }
 
-.contact-box h2{
-    font-size:35px;
-}
-
-.phone{
-    font-size:28px;
-}
-
-.timeline-item{
-    padding-left:70px;
-}
-
 }
 
 </style>
@@ -624,6 +522,24 @@ footer{
 <body>
 
 <div id="particles"></div>
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" autoplay loop>
+    <source src="https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/main/music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player" onclick="toggleMusic()">
+
+    <div class="music-icon playing" id="musicIcon">
+        <i class="fa-solid fa-music"></i>
+    </div>
+
+    <span id="musicText">
+        Đang Phát
+    </span>
+
+</div>
 
 <header>
 
@@ -638,7 +554,6 @@ footer{
             <a href="#skills">Kỹ Năng</a>
             <a href="#education">Học Tập</a>
             <a href="#social">Mạng Xã Hội</a>
-            <a href="#contact">Liên Hệ</a>
 
         </div>
 
@@ -663,87 +578,9 @@ footer{
         <div class="typing" id="typing"></div>
 
         <p>
-            Kỹ sư xây dựng • Đam mê thiết kế • Yêu sáng tạo • 
-            Luôn muốn tạo ra những công trình mang dấu ấn riêng.
-            <br><br>
-
-            “Một công trình đẹp không chỉ nằm ở vật liệu.
-            Mà nằm ở tư duy của người tạo ra nó.”
-            <br><br>
-
-            <span style="color:#00d4ff;">
-                “Thành công không đến từ may mắn.
-                Nó đến từ những ngày không ai thấy mình cố gắng.”
-            </span>
+            “Thành công không đến từ may mắn.
+            Nó đến từ những ngày không ai thấy mình cố gắng.”
         </p>
-
-        <div class="btn-group">
-
-            <a href="tel:0867544809" class="btn btn-primary">
-                📞 Gọi Ngay
-            </a>
-
-            <a href="#social" class="btn btn-outline">
-                🌐 Kết Nối
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section" style="padding-top:0;">
-
-    <div class="container">
-
-        <div class="status-bar">
-
-            <div class="status-card">
-
-                <h3>🔥 Current Focus</h3>
-
-                <p>
-                    Xây dựng thương hiệu cá nhân & phát triển MKHOME
-                </p>
-
-            </div>
-
-            <div class="status-card">
-
-                <h3>🚀 Future Goal</h3>
-
-                <p>
-                    Tạo ra những công trình có dấu ấn riêng tại Việt Nam
-                </p>
-
-            </div>
-
-            <div class="status-card">
-
-                <h3>⚡ Mindset</h3>
-
-                <p>
-                    Không chạy theo số đông. Chạy theo giá trị thật.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div style="
-        margin-top:40px;
-        text-align:center;
-        font-size:22px;
-        line-height:1.8;
-        color:#cbd5e1;
-        font-style:italic;
-        ">
-
-            “Người xây được tương lai,
-            là người dám đặt viên gạch đầu tiên.”
-
-        </div>
 
     </div>
 
@@ -758,24 +595,9 @@ footer{
             <h2>Kỹ Năng</h2>
 
             <p>
-                Không chỉ xây công trình. Mà còn xây giá trị 🔥
+                “Kỹ năng có thể học theo thời gian.
+                Nhưng tư duy mới tạo nên khác biệt.”
             </p>
-
-        </div>
-
-        <div style="
-        text-align:center;
-        max-width:800px;
-        margin:auto;
-        margin-top:-30px;
-        margin-bottom:50px;
-        line-height:1.9;
-        font-size:18px;
-        color:#cbd5e1;
-        ">
-
-            “Kỹ năng có thể học theo thời gian.
-            Nhưng tư duy và bản lĩnh mới là thứ tạo nên khác biệt.”
 
         </div>
 
@@ -788,7 +610,7 @@ footer{
                 <h3>Thiết Kế Nhà</h3>
 
                 <p>
-                    Thiết kế không gian sống hiện đại, tối ưu công năng và thẩm mỹ.
+                    Thiết kế không gian sống hiện đại và tối ưu.
                 </p>
 
             </div>
@@ -800,7 +622,7 @@ footer{
                 <h3>Kỹ Thuật Xây Dựng</h3>
 
                 <p>
-                    Nắm vững kiến thức xây dựng dân dụng và triển khai công trình thực tế.
+                    Chuyên ngành Kỹ Thuật Xây Dựng Dân Dụng.
                 </p>
 
             </div>
@@ -809,22 +631,10 @@ footer{
 
                 <div class="icon">💡</div>
 
-                <h3>Tư Duy Sáng Tạo</h3>
+                <h3>Sáng Tạo</h3>
 
                 <p>
-                    Luôn tìm kiếm ý tưởng mới thay vì đi theo lối mòn cũ.
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <div class="icon">🤝</div>
-
-                <h3>Làm Việc Nhóm</h3>
-
-                <p>
-                    Khả năng phối hợp và làm việc nhóm hiệu quả trong dự án.
+                    Luôn tìm ý tưởng mới thay vì đi theo lối mòn.
                 </p>
 
             </div>
@@ -843,10 +653,6 @@ footer{
 
             <h2>Quá Trình Học Tập</h2>
 
-            <p>
-                Hành trình học tập là nền móng cho mọi công trình tương lai 📚
-            </p>
-
         </div>
 
         <div class="timeline">
@@ -857,18 +663,10 @@ footer{
 
                 <div class="timeline-content">
 
-                    <span class="timeline-year">
-                        2008 - 2013
-                    </span>
-
-                    <h3>
-                        Trường Tiểu Học Ninh Bình
-                    </h3>
+                    <h3>Tiểu Học Ninh Bình</h3>
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                        <br>
-                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -881,18 +679,10 @@ footer{
 
                 <div class="timeline-content">
 
-                    <span class="timeline-year">
-                        2013 - 2017
-                    </span>
-
-                    <h3>
-                        Trường THCS Nguyễn Gia Thiều
-                    </h3>
+                    <h3>THCS Nguyễn Gia Thiều</h3>
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                        <br>
-                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -905,13 +695,7 @@ footer{
 
                 <div class="timeline-content">
 
-                    <span class="timeline-year">
-                        2017 - 2020
-                    </span>
-
-                    <h3>
-                        Trường THPT Trần Cao Vân
-                    </h3>
+                    <h3>THPT Trần Cao Vân</h3>
 
                     <p>
                         Thị xã Ninh Hoà, Tỉnh Khánh Hoà
@@ -927,39 +711,15 @@ footer{
 
                 <div class="timeline-content">
 
-                    <span class="timeline-year">
-                        2020 - 2024
-                    </span>
-
-                    <h3>
-                        Đại Học Nha Trang
-                    </h3>
+                    <h3>Đại Học Nha Trang</h3>
 
                     <p>
                         Ngành Kỹ Thuật Xây Dựng (Dân Dụng)
-                        <br>
-                        TP Nha Trang, Tỉnh Khánh Hoà
                     </p>
 
                 </div>
 
             </div>
-
-        </div>
-
-        <div style="
-        max-width:900px;
-        margin:60px auto 0;
-        text-align:center;
-        line-height:1.9;
-        font-size:22px;
-        color:#cbd5e1;
-        font-style:italic;
-        ">
-
-            “Kiến thức là nền móng.
-            Kinh nghiệm là thép chịu lực.
-            Và ý chí là thứ giữ cả công trình đứng vững.”
 
         </div>
 
@@ -975,10 +735,6 @@ footer{
 
             <h2>Mạng Xã Hội</h2>
 
-            <p>
-                Kết nối để xem thêm những điều thú vị 😎
-            </p>
-
         </div>
 
         <div class="socials">
@@ -993,10 +749,6 @@ footer{
 
                 <h3>Facebook</h3>
 
-                <p class="social-text">
-                    Trần Minh Khoa
-                </p>
-
             </a>
 
             <a href="https://zalo.me/0867544809"
@@ -1008,10 +760,6 @@ footer{
                 </span>
 
                 <h3>Zalo</h3>
-
-                <p class="social-text">
-                    0867 544 809
-                </p>
 
             </a>
 
@@ -1025,10 +773,6 @@ footer{
 
                 <h3>TikTok</h3>
 
-                <p class="social-text">
-                    @khoa200206
-                </p>
-
             </a>
 
             <a href="mailto:khoaminhtran9@gmail.com"
@@ -1040,10 +784,6 @@ footer{
 
                 <h3>Email</h3>
 
-                <p class="social-text">
-                    khoaminhtran9@gmail.com
-                </p>
-
             </a>
 
         </div>
@@ -1051,44 +791,6 @@ footer{
     </div>
 
 </section>
-
-<section class="section" id="contact">
-
-    <div class="container">
-
-        <div class="contact-box">
-
-            <h2>Liên Hệ Với Tôi</h2>
-
-            <p>
-                Nếu bạn cần trao đổi về xây dựng, thiết kế,
-                hợp tác dự án hoặc chỉ đơn giản là kết nối —
-                cứ liên hệ 😄
-            </p>
-
-            <div class="phone">
-                📞 0867 544 809
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<div style="
-padding:40px 20px 10px;
-text-align:center;
-font-size:18px;
-color:#94a3b8;
-line-height:1.9;
-">
-
-    “Một ngày nào đó,
-    những điều từng bị xem là viển vông
-    sẽ trở thành thứ khiến người khác ngước nhìn.”
-
-</div>
 
 <footer>
 
@@ -1098,11 +800,12 @@ line-height:1.9;
 
 <script>
 
+/* TYPING */
+
 const text = [
     "Kỹ Sư Xây Dựng",
     "Designer",
-    "Creative Thinker",
-    "MKHOME Founder"
+    "Creative Thinker"
 ];
 
 let count = 0;
@@ -1136,6 +839,8 @@ let letter = "";
 
 })();
 
+/* PARTICLES */
+
 const particles = document.getElementById("particles");
 
 for(let i=0;i<60;i++){
@@ -1156,6 +861,39 @@ for(let i=0;i<60;i++){
     Math.random()*5 + 2 + "px";
 
     particles.appendChild(particle);
+
+}
+
+/* MUSIC */
+
+const music = document.getElementById("bgMusic");
+const musicIcon = document.getElementById("musicIcon");
+
+let isPlaying = true;
+
+window.addEventListener("load", () => {
+
+    music.play().catch(() => {});
+
+});
+
+function toggleMusic(){
+
+    if(isPlaying){
+
+        music.pause();
+
+        musicIcon.classList.remove("playing");
+
+    }else{
+
+        music.play();
+
+        musicIcon.classList.add("playing");
+
+    }
+
+    isPlaying = !isPlaying;
 
 }
 

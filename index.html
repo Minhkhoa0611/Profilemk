@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trần Minh Khoa | Profile Cá Nhân</title>
+<title>Trần Minh Khoa | MK Profile</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -30,23 +30,46 @@ body{
     overflow-x:hidden;
 }
 
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00d5ff22;
+    filter:blur(120px);
+    top:-200px;
+    left:-200px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#7c3aed22;
+    filter:blur(120px);
+    bottom:-200px;
+    right:-200px;
+    z-index:-2;
+}
+
 /* PARTICLES */
 
 #particles{
     position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-2;
+    inset:0;
+    z-index:-1;
     overflow:hidden;
 }
 
 .particle{
     position:absolute;
-    width:4px;
-    height:4px;
     background:#00d4ff;
     border-radius:50%;
-    opacity:0.5;
+    opacity:0.45;
     animation:floatParticle linear infinite;
 }
 
@@ -57,63 +80,38 @@ body{
     }
 
     to{
-        transform:translateY(-100px);
+        transform:translateY(-120px);
     }
 
-}
-
-/* BACKGROUND */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#00d5ff25;
-    filter:blur(120px);
-    top:-200px;
-    left:-200px;
-    z-index:-1;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:#7c3aed33;
-    filter:blur(120px);
-    bottom:-200px;
-    right:-200px;
-    z-index:-1;
 }
 
 /* HEADER */
 
 header{
-    width:100%;
     position:fixed;
     top:0;
     left:0;
+    width:100%;
     z-index:999;
-    background:rgba(5,8,22,0.7);
+    background:rgba(5,8,22,0.72);
     backdrop-filter:blur(12px);
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .nav{
-    max-width:1300px;
+    max-width:1200px;
     margin:auto;
-    padding:20px;
+    padding:18px 20px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:32px;
+    font-size:30px;
     font-weight:800;
     color:#00d4ff;
+    letter-spacing:1px;
 }
 
 .menu{
@@ -122,8 +120,8 @@ header{
 }
 
 .menu a{
-    text-decoration:none;
     color:white;
+    text-decoration:none;
     transition:0.3s;
     font-weight:500;
 }
@@ -140,23 +138,28 @@ header{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:130px 20px 80px;
+    padding:130px 20px 90px;
 }
 
 .hero-content{
-    max-width:900px;
+    max-width:950px;
 }
 
 .avatar{
-    width:220px;
-    height:220px;
+    width:230px;
+    height:230px;
+    margin:auto;
     border-radius:50%;
     overflow:hidden;
-    margin:auto;
     border:5px solid #00d4ff;
-    box-shadow:0 0 40px rgba(0,212,255,0.4);
-    margin-bottom:35px;
+
+    box-shadow:
+    0 0 30px rgba(0,212,255,0.5),
+    0 0 80px rgba(0,212,255,0.2);
+
     animation:float 4s ease-in-out infinite;
+
+    margin-bottom:35px;
 }
 
 .avatar img{
@@ -182,7 +185,8 @@ header{
 }
 
 .hero h1{
-    font-size:75px;
+    font-size:76px;
+    line-height:1.1;
     margin-bottom:20px;
 }
 
@@ -193,14 +197,50 @@ header{
 .typing{
     color:#00d4ff;
     font-size:24px;
-    margin-bottom:25px;
     height:35px;
+    margin-bottom:25px;
 }
 
 .hero p{
     color:#cbd5e1;
-    line-height:1.9;
     font-size:20px;
+    line-height:1.9;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 30px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.35s;
+}
+
+.btn-primary{
+    background:#00d4ff;
+    color:#05111c;
+}
+
+.btn-primary:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,212,255,0.35);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:black;
 }
 
 /* SECTION */
@@ -228,7 +268,7 @@ header{
     color:#94a3b8;
 }
 
-/* GRID */
+/* CARDS */
 
 .grid{
     display:grid;
@@ -241,24 +281,24 @@ header{
     border:1px solid rgba(255,255,255,0.08);
     padding:35px;
     border-radius:25px;
-    transition:0.4s;
+    transition:0.35s;
     backdrop-filter:blur(12px);
 }
 
 .card:hover{
     transform:translateY(-10px);
     border-color:#00d4ff;
-    box-shadow:0 0 35px rgba(0,212,255,0.2);
+    box-shadow:0 0 35px rgba(0,212,255,0.18);
 }
 
 .card .icon{
-    font-size:52px;
+    font-size:55px;
     margin-bottom:20px;
 }
 
 .card h3{
+    font-size:25px;
     margin-bottom:15px;
-    font-size:24px;
 }
 
 .card p{
@@ -287,7 +327,7 @@ header{
 .timeline-item{
     position:relative;
     padding-left:90px;
-    margin-bottom:45px;
+    margin-bottom:50px;
 }
 
 .timeline-dot{
@@ -298,24 +338,26 @@ header{
     position:absolute;
     left:21px;
     top:10px;
+    box-shadow:0 0 20px #00d4ff;
 }
 
 .timeline-content{
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
-    padding:30px;
     border-radius:25px;
+    padding:30px;
 }
 
 .timeline-year{
+    display:block;
     color:#00d4ff;
     font-weight:700;
-    display:block;
     margin-bottom:12px;
 }
 
 .timeline-content h3{
     margin-bottom:12px;
+    font-size:26px;
 }
 
 .timeline-content p{
@@ -339,29 +381,36 @@ header{
     border-radius:25px;
     text-decoration:none;
     color:white;
+
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    transition:0.4s;
+
+    transition:0.35s;
 }
 
 .social:hover{
     transform:translateY(-10px);
     border-color:#00d4ff;
+    box-shadow:0 0 35px rgba(0,212,255,0.2);
 }
 
 .social-icon{
-    width:80px;
-    height:80px;
+    width:82px;
+    height:82px;
     border-radius:50%;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:35px;
+
     margin-bottom:20px;
+
+    font-size:35px;
 }
 
 .facebook{
@@ -374,20 +423,36 @@ header{
     font-weight:700;
 }
 
-.email{
-    background:#ff9800;
-}
-
 .tiktok{
     background:#111;
     border:2px solid white;
 }
 
+.email{
+    background:#ff9800;
+}
+
+.social h3{
+    margin-bottom:12px;
+}
+
 .social-text{
     color:#94a3b8;
     text-align:center;
-    line-height:1.6;
     font-size:14px;
+    line-height:1.6;
+}
+
+/* QUOTES */
+
+.quote-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:2;
+    font-size:24px;
+    color:#cbd5e1;
+    font-style:italic;
 }
 
 /* MUSIC BUTTON */
@@ -453,6 +518,8 @@ header{
 
 }
 
+/* FOOTER */
+
 footer{
     padding:40px 20px;
     text-align:center;
@@ -469,7 +536,7 @@ footer{
 }
 
 .hero h1{
-    font-size:46px;
+    font-size:48px;
 }
 
 .hero p{
@@ -481,12 +548,16 @@ footer{
 }
 
 .avatar{
-    width:160px;
-    height:160px;
+    width:170px;
+    height:170px;
 }
 
 .title h2{
     font-size:38px;
+}
+
+.quote-box{
+    font-size:18px;
 }
 
 }
@@ -499,11 +570,15 @@ footer{
 
 <div id="particles"></div>
 
-<!-- NHẠC -->
+<!-- MUSIC -->
 
 <audio id="bgMusic" autoplay loop>
+
     <source src="music.mp3" type="audio/mpeg">
+
 </audio>
+
+<!-- MUSIC BUTTON -->
 
 <div class="music-player" onclick="toggleMusic()">
 
@@ -512,6 +587,8 @@ footer{
     </div>
 
 </div>
+
+<!-- HEADER -->
 
 <header>
 
@@ -526,6 +603,7 @@ footer{
             <a href="#skills">Kỹ Năng</a>
             <a href="#education">Học Tập</a>
             <a href="#social">Mạng Xã Hội</a>
+            <a href="#quotes">Quotes</a>
 
         </div>
 
@@ -533,13 +611,24 @@ footer{
 
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
 
     <div class="hero-content">
 
         <div class="avatar">
 
-            <img src="IMG_1055.jpeg">
+            <img
+
+            src="IMG_1055.jpeg"
+
+            onerror="
+            this.onerror=null;
+            this.src='https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/refs/heads/main/IMG_1055.jpeg';
+            "
+
+            >
 
         </div>
 
@@ -554,9 +643,23 @@ footer{
             Nó đến từ những ngày không ai thấy mình cố gắng.”
         </p>
 
+        <div class="hero-buttons">
+
+            <a href="tel:0867544809" class="btn btn-primary">
+                📞 Liên Hệ
+            </a>
+
+            <a href="#social" class="btn btn-outline">
+                🌐 Kết Nối
+            </a>
+
+        </div>
+
     </div>
 
 </section>
+
+<!-- SKILLS -->
 
 <section class="section" id="skills">
 
@@ -582,7 +685,7 @@ footer{
                 <h3>Thiết Kế Nhà</h3>
 
                 <p>
-                    Thiết kế không gian sống hiện đại và tối ưu.
+                    Thiết kế không gian sống hiện đại và tối ưu công năng.
                 </p>
 
             </div>
@@ -611,11 +714,25 @@ footer{
 
             </div>
 
+            <div class="card">
+
+                <div class="icon">🚀</div>
+
+                <h3>Tư Duy Phát Triển</h3>
+
+                <p>
+                    Luôn học hỏi và phát triển bản thân mỗi ngày.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
 
 </section>
+
+<!-- EDUCATION -->
 
 <section class="section" id="education">
 
@@ -624,6 +741,11 @@ footer{
         <div class="title">
 
             <h2>Quá Trình Học Tập</h2>
+
+            <p>
+                “Kiến thức là nền móng.
+                Ý chí là thứ giữ công trình đứng vững.”
+            </p>
 
         </div>
 
@@ -645,6 +767,8 @@ footer{
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
+                        <br>
+                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -667,6 +791,8 @@ footer{
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
+                        <br>
+                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -725,6 +851,8 @@ footer{
 
 </section>
 
+<!-- SOCIAL -->
+
 <section class="section" id="social">
 
     <div class="container">
@@ -732,6 +860,10 @@ footer{
         <div class="title">
 
             <h2>Mạng Xã Hội</h2>
+
+            <p>
+                Kết nối và theo dõi hành trình của mình 😎
+            </p>
 
         </div>
 
@@ -806,6 +938,38 @@ footer{
 
 </section>
 
+<!-- QUOTES -->
+
+<section class="section" id="quotes">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>Quotes</h2>
+
+        </div>
+
+        <div class="quote-box">
+
+            “Người xây được tương lai,
+            là người dám đặt viên gạch đầu tiên.”
+            <br><br>
+
+            “Đừng sợ đi chậm.
+            Chỉ sợ đứng yên.”
+            <br><br>
+
+            “Một ngày nào đó,
+            những điều từng bị xem là viển vông
+            sẽ trở thành thứ khiến người khác ngước nhìn.”
+
+        </div>
+
+    </div>
+
+</section>
+
 <footer>
 
     © 2026 Trần Minh Khoa — Built with passion ⚡
@@ -819,7 +983,8 @@ footer{
 const text = [
     "Kỹ Sư Xây Dựng",
     "Designer",
-    "Creative Thinker"
+    "Creative Thinker",
+    "MKHOME"
 ];
 
 let count = 0;
@@ -834,6 +999,7 @@ let letter = "";
     }
 
     currentText = text[count];
+
     letter = currentText.slice(0, ++index);
 
     document.getElementById("typing").textContent = letter;
@@ -857,7 +1023,7 @@ let letter = "";
 
 const particles = document.getElementById("particles");
 
-for(let i=0;i<60;i++){
+for(let i=0;i<70;i++){
 
     const particle = document.createElement("div");
 
@@ -865,14 +1031,14 @@ for(let i=0;i<60;i++){
 
     particle.style.left = Math.random()*100 + "vw";
 
+    particle.style.width =
+    particle.style.height =
+    Math.random()*5 + 2 + "px";
+
     particle.style.animationDuration =
     (Math.random()*10 + 8) + "s";
 
     particle.style.opacity = Math.random();
-
-    particle.style.width =
-    particle.style.height =
-    Math.random()*5 + 2 + "px";
 
     particles.appendChild(particle);
 
@@ -884,6 +1050,21 @@ const music = document.getElementById("bgMusic");
 const musicIcon = document.getElementById("musicIcon");
 
 let isPlaying = true;
+
+/* MUSIC FALLBACK */
+
+music.addEventListener("error", () => {
+
+    music.src =
+    'https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/3eb761cb7c4b147cd779f09f08634be22d583133/music.mp3';
+
+    music.load();
+
+    music.play().catch(() => {});
+
+});
+
+/* AUTOPLAY */
 
 window.addEventListener("load", () => {
 
@@ -904,6 +1085,8 @@ window.addEventListener("load", () => {
     }
 
 });
+
+/* TOGGLE MUSIC */
 
 function toggleMusic(){
 
@@ -929,4 +1112,3 @@ function toggleMusic(){
 
 </body>
 </html>
-V1

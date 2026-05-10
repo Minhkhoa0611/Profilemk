@@ -317,6 +317,64 @@ header{
     color:#94a3b8;
 }
 
+/* ABOUT */
+
+.about-box{
+
+    max-width:950px;
+    margin:auto;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    backdrop-filter:blur(12px);
+
+    line-height:2;
+
+    font-size:19px;
+
+    color:#cbd5e1;
+
+    transition:0.35s;
+
+}
+
+.about-box:hover{
+
+    border-color:#00d4ff;
+
+    box-shadow:0 0 35px rgba(0,212,255,0.15);
+
+}
+
+.about-box span{
+
+    color:#00d4ff;
+    font-weight:700;
+
+}
+
+.about-quote{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    font-size:26px;
+
+    color:white;
+
+    font-style:italic;
+
+    line-height:1.8;
+
+}
+
 /* CARDS */
 
 .grid{
@@ -632,9 +690,7 @@ footer{
 <!-- MUSIC -->
 
 <audio id="bgMusic" autoplay loop>
-
     <source src="music.mp3" type="audio/mpeg">
-
 </audio>
 
 <!-- MUSIC BUTTON -->
@@ -659,6 +715,7 @@ footer{
 
         <div class="menu">
 
+            <a href="#about">Giới Thiệu</a>
             <a href="#skills">Kỹ Năng</a>
             <a href="#education">Học Tập</a>
             <a href="#social">Mạng Xã Hội</a>
@@ -726,154 +783,51 @@ footer{
 
 </section>
 
-<!-- SKILLS -->
+<!-- ABOUT -->
 
-<section class="section" id="skills">
+<section class="section" id="about">
 
     <div class="container">
 
         <div class="title">
 
-            <h2>Kỹ Năng</h2>
+            <h2>Giới Thiệu</h2>
 
             <p>
-                “Kỹ năng có thể học theo thời gian.
-                Nhưng tư duy mới tạo nên khác biệt.”
+                Một chút về bản thân và hành trình phía trước 🚀
             </p>
 
         </div>
 
-        <div class="grid">
+        <div class="about-box">
 
-            <div class="card">
-                <div class="icon">🏠</div>
-                <h3>Thiết Kế Nhà</h3>
-                <p>Thiết kế không gian sống hiện đại và tối ưu công năng.</p>
-            </div>
+            <p>
+                Xin chào, mình là <span>Trần Minh Khoa</span> —
+                một người theo đuổi lĩnh vực
+                <span>Kỹ Thuật Xây Dựng Dân Dụng</span>
+                với niềm đam mê về thiết kế, sáng tạo và công nghệ.
+            </p>
 
-            <div class="card">
-                <div class="icon">📐</div>
-                <h3>Kỹ Thuật Xây Dựng</h3>
-                <p>Chuyên ngành Kỹ Thuật Xây Dựng Dân Dụng.</p>
-            </div>
+            <br>
 
-            <div class="card">
-                <div class="icon">💡</div>
-                <h3>Sáng Tạo</h3>
-                <p>Luôn tìm ý tưởng mới thay vì đi theo lối mòn.</p>
-            </div>
+            <p>
+                Với mình, xây dựng không chỉ là dựng nên một công trình,
+                mà còn là tạo ra không gian sống mang giá trị lâu dài.
+                Một ngôi nhà đẹp không chỉ nằm ở hình thức,
+                mà còn ở cảm giác bình yên khi trở về.
+            </p>
 
-            <div class="card">
-                <div class="icon">🚀</div>
-                <h3>Tư Duy Phát Triển</h3>
-                <p>Luôn học hỏi và phát triển bản thân mỗi ngày.</p>
-            </div>
+            <br>
 
-        </div>
+            <p>
+                Luôn học hỏi, luôn phát triển,
+                và luôn tin rằng:
+            </p>
 
-    </div>
+            <div class="about-quote">
 
-</section>
-
-<!-- EDUCATION -->
-
-<section class="section" id="education">
-
-    <div class="container">
-
-        <div class="title">
-
-            <h2>Quá Trình Học Tập</h2>
-
-        </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-                        2008 - 2013
-                    </span>
-
-                    <h3>
-                        Trường Tiểu Học Ninh Bình
-                    </h3>
-
-                    <p>
-                        Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-                        2013 - 2017
-                    </span>
-
-                    <h3>
-                        Trường THCS Nguyễn Gia Thiều
-                    </h3>
-
-                    <p>
-                        Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-                        2017 - 2020
-                    </span>
-
-                    <h3>
-                        Trường THPT Trần Cao Vân
-                    </h3>
-
-                    <p>
-                        Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span class="timeline-year">
-                        2020 - 2024
-                    </span>
-
-                    <h3>
-                        Đại Học Nha Trang
-                    </h3>
-
-                    <p>
-                        Ngành Kỹ Thuật Xây Dựng (Dân Dụng)
-                    </p>
-
-                </div>
+                “Một viên gạch nhỏ hôm nay,
+                có thể là nền móng cho cả tương lai.”
 
             </div>
 
@@ -882,270 +836,6 @@ footer{
     </div>
 
 </section>
-
-<!-- SOCIAL -->
-
-<section class="section" id="social">
-
-    <div class="container">
-
-        <div class="title">
-
-            <h2>Mạng Xã Hội</h2>
-
-        </div>
-
-        <div class="socials">
-
-            <a href="https://www.facebook.com/share/1BRUi9UxEb/?mibextid=wwXIfr"
-            target="_blank"
-            class="social">
-
-                <span class="social-icon facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </span>
-
-                <h3>Facebook</h3>
-
-                <p class="social-text">
-                    facebook.com
-                </p>
-
-            </a>
-
-            <a href="https://zalo.me/0867544809"
-            target="_blank"
-            class="social">
-
-                <span class="social-icon zalo">
-                    Zalo
-                </span>
-
-                <h3>Zalo</h3>
-
-                <p class="social-text">
-                    0867 544 809
-                </p>
-
-            </a>
-
-            <a href="https://www.tiktok.com/@khoa200206"
-            target="_blank"
-            class="social">
-
-                <span class="social-icon tiktok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </span>
-
-                <h3>TikTok</h3>
-
-                <p class="social-text">
-                    @khoa200206
-                </p>
-
-            </a>
-
-            <a href="mailto:khoaminhtran9@gmail.com"
-            class="social">
-
-                <span class="social-icon email">
-                    <i class="fa-solid fa-envelope"></i>
-                </span>
-
-                <h3>Email</h3>
-
-                <p class="social-text">
-                    khoaminhtran9@gmail.com
-                </p>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- QUOTES -->
-
-<section class="section" id="quotes">
-
-    <div class="container">
-
-        <div class="title">
-
-            <h2>Quotes</h2>
-
-        </div>
-
-        <div class="quote-box">
-
-            “Người xây được tương lai,
-            là người dám đặt viên gạch đầu tiên.”
-            <br><br>
-
-            “Đừng sợ đi chậm.
-            Chỉ sợ đứng yên.”
-            <br><br>
-
-            “Một ngày nào đó,
-            những điều từng bị xem là viển vông
-            sẽ trở thành thứ khiến người khác ngước nhìn.”
-
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-
-    © 2026 Trần Minh Khoa — Built with passion ⚡
-
-</footer>
-
-<script>
-
-/* TYPING */
-
-const text = [
-    "Kỹ Sư Xây Dựng",
-    "Designer",
-    "Creative Thinker",
-    "MKHOME"
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-(function type(){
-
-    if(count === text.length){
-        count = 0;
-    }
-
-    currentText = text[count];
-
-    letter = currentText.slice(0, ++index);
-
-    document.getElementById("typing").textContent = letter;
-
-    if(letter.length === currentText.length){
-
-        count++;
-        index = 0;
-
-        setTimeout(type,1000);
-
-    }else{
-
-        setTimeout(type,80);
-
-    }
-
-})();
-
-/* PARTICLES */
-
-const particles = document.getElementById("particles");
-
-for(let i=0;i<70;i++){
-
-    const particle = document.createElement("div");
-
-    particle.classList.add("particle");
-
-    particle.style.left = Math.random()*100 + "vw";
-
-    particle.style.width =
-    particle.style.height =
-    Math.random()*5 + 2 + "px";
-
-    particle.style.animationDuration =
-    (Math.random()*10 + 8) + "s";
-
-    particle.style.opacity = Math.random();
-
-    particles.appendChild(particle);
-
-}
-
-/* MUSIC */
-
-const music = document.getElementById("bgMusic");
-const musicIcon = document.getElementById("musicIcon");
-const waves = document.querySelectorAll(".music-wave");
-
-let isPlaying = true;
-
-/* FALLBACK MUSIC */
-
-music.addEventListener("error", () => {
-
-    music.src =
-    'https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/3eb761cb7c4b147cd779f09f08634be22d583133/music.mp3';
-
-    music.load();
-
-    music.play().catch(() => {});
-
-});
-
-/* AUTOPLAY */
-
-window.addEventListener("load", () => {
-
-    const playPromise = music.play();
-
-    if(playPromise !== undefined){
-
-        playPromise.catch(() => {
-
-            document.body.addEventListener("click", () => {
-
-                music.play();
-
-            }, { once:true });
-
-        });
-
-    }
-
-});
-
-/* TOGGLE MUSIC */
-
-function toggleMusic(){
-
-    if(isPlaying){
-
-        music.pause();
-
-        musicIcon.classList.remove("playing");
-
-        waves.forEach(w => {
-            w.style.display = "none";
-        });
-
-    }else{
-
-        music.play();
-
-        musicIcon.classList.add("playing");
-
-        waves.forEach(w => {
-            w.style.display = "block";
-        });
-
-    }
-
-    isPlaying = !isPlaying;
-
-}
-
-</script>
 
 </body>
 </html>

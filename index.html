@@ -111,7 +111,6 @@ header{
     font-size:30px;
     font-weight:800;
     color:#00d4ff;
-    letter-spacing:1px;
 }
 
 .menu{
@@ -145,10 +144,58 @@ header{
     max-width:950px;
 }
 
-.avatar{
+/* AVATAR */
+
+.avatar-wrap{
+    position:relative;
     width:230px;
     height:230px;
     margin:auto;
+    margin-bottom:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.music-wave{
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(0,212,255,0.4);
+
+    animation:musicWave 3s linear infinite;
+}
+
+.wave2{
+    animation-delay:1s;
+}
+
+.wave3{
+    animation-delay:2s;
+}
+
+@keyframes musicWave{
+
+    0%{
+        transform:scale(1);
+        opacity:0.7;
+    }
+
+    100%{
+        transform:scale(1.6);
+        opacity:0;
+    }
+
+}
+
+.avatar{
+    width:230px;
+    height:230px;
     border-radius:50%;
     overflow:hidden;
     border:5px solid #00d4ff;
@@ -159,7 +206,7 @@ header{
 
     animation:float 4s ease-in-out infinite;
 
-    margin-bottom:35px;
+    z-index:5;
 }
 
 .avatar img{
@@ -207,6 +254,8 @@ header{
     line-height:1.9;
     margin-bottom:40px;
 }
+
+/* BUTTONS */
 
 .hero-buttons{
     display:flex;
@@ -547,7 +596,17 @@ footer{
     font-size:18px;
 }
 
+.avatar-wrap{
+    width:170px;
+    height:170px;
+}
+
 .avatar{
+    width:170px;
+    height:170px;
+}
+
+.music-wave{
     width:170px;
     height:170px;
 }
@@ -617,18 +676,26 @@ footer{
 
     <div class="hero-content">
 
-        <div class="avatar">
+        <div class="avatar-wrap">
 
-            <img
+            <div class="music-wave wave1"></div>
+            <div class="music-wave wave2"></div>
+            <div class="music-wave wave3"></div>
 
-            src="IMG_1055.jpeg"
+            <div class="avatar">
 
-            onerror="
-            this.onerror=null;
-            this.src='https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/refs/heads/main/IMG_1055.jpeg';
-            "
+                <img
 
-            >
+                src="IMG_1055.jpeg"
+
+                onerror="
+                this.onerror=null;
+                this.src='https://raw.githubusercontent.com/Minhkhoa0611/Profilemk/refs/heads/main/IMG_1055.jpeg';
+                "
+
+                >
+
+            </div>
 
         </div>
 
@@ -679,51 +746,27 @@ footer{
         <div class="grid">
 
             <div class="card">
-
                 <div class="icon">🏠</div>
-
                 <h3>Thiết Kế Nhà</h3>
-
-                <p>
-                    Thiết kế không gian sống hiện đại và tối ưu công năng.
-                </p>
-
+                <p>Thiết kế không gian sống hiện đại và tối ưu công năng.</p>
             </div>
 
             <div class="card">
-
                 <div class="icon">📐</div>
-
                 <h3>Kỹ Thuật Xây Dựng</h3>
-
-                <p>
-                    Chuyên ngành Kỹ Thuật Xây Dựng Dân Dụng.
-                </p>
-
+                <p>Chuyên ngành Kỹ Thuật Xây Dựng Dân Dụng.</p>
             </div>
 
             <div class="card">
-
                 <div class="icon">💡</div>
-
                 <h3>Sáng Tạo</h3>
-
-                <p>
-                    Luôn tìm ý tưởng mới thay vì đi theo lối mòn.
-                </p>
-
+                <p>Luôn tìm ý tưởng mới thay vì đi theo lối mòn.</p>
             </div>
 
             <div class="card">
-
                 <div class="icon">🚀</div>
-
                 <h3>Tư Duy Phát Triển</h3>
-
-                <p>
-                    Luôn học hỏi và phát triển bản thân mỗi ngày.
-                </p>
-
+                <p>Luôn học hỏi và phát triển bản thân mỗi ngày.</p>
             </div>
 
         </div>
@@ -741,11 +784,6 @@ footer{
         <div class="title">
 
             <h2>Quá Trình Học Tập</h2>
-
-            <p>
-                “Kiến thức là nền móng.
-                Ý chí là thứ giữ công trình đứng vững.”
-            </p>
 
         </div>
 
@@ -767,8 +805,6 @@ footer{
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                        <br>
-                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -791,8 +827,6 @@ footer{
 
                     <p>
                         Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
-                        <br>
-                        ( Nay là Xã Tân Định, Tỉnh Khánh Hoà )
                     </p>
 
                 </div>
@@ -837,8 +871,6 @@ footer{
 
                     <p>
                         Ngành Kỹ Thuật Xây Dựng (Dân Dụng)
-                        <br>
-                        TP Nha Trang, Tỉnh Khánh Hoà
                     </p>
 
                 </div>
@@ -860,10 +892,6 @@ footer{
         <div class="title">
 
             <h2>Mạng Xã Hội</h2>
-
-            <p>
-                Kết nối và theo dõi hành trình của mình 😎
-            </p>
 
         </div>
 
@@ -1048,10 +1076,11 @@ for(let i=0;i<70;i++){
 
 const music = document.getElementById("bgMusic");
 const musicIcon = document.getElementById("musicIcon");
+const waves = document.querySelectorAll(".music-wave");
 
 let isPlaying = true;
 
-/* MUSIC FALLBACK */
+/* FALLBACK MUSIC */
 
 music.addEventListener("error", () => {
 
@@ -1096,11 +1125,19 @@ function toggleMusic(){
 
         musicIcon.classList.remove("playing");
 
+        waves.forEach(w => {
+            w.style.display = "none";
+        });
+
     }else{
 
         music.play();
 
         musicIcon.classList.add("playing");
+
+        waves.forEach(w => {
+            w.style.display = "block";
+        });
 
     }
 

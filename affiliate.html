@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MK Affiliate Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* PARTICLES */
+
+.particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+    pointer-events:none;
+}
+
+.particles span{
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    background:#00e5ff;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #00e5ff,
+    0 0 20px #00e5ff,
+    0 0 40px #00e5ff;
+
+    animation:animate 15s linear infinite;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:20px;
+
+    position:relative;
+    z-index:2;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.88)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero{
+    max-width:900px;
+}
+
+.hero h1{
+
+    font-size:75px;
+    font-weight:700;
+
+    background:linear-gradient(90deg,#00e5ff,#00ff9d);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:glow 2s infinite alternate;
+}
+
+.hero p{
+
+    margin-top:25px;
+    color:#d7d7d7;
+    font-size:22px;
+    line-height:1.8;
+}
+
+.hero-btn{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:18px 45px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+    color:black;
+
+    font-size:18px;
+    font-weight:700;
+
+    background:linear-gradient(90deg,#00e5ff,#00ff9d);
+
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 30px #00e5ff;
+}
+
+/* SECTION */
+
+.section{
+    position:relative;
+    z-index:2;
+
+    padding:90px 10%;
+}
+
+.section-title{
+
+    text-align:center;
+    font-size:50px;
+
+    margin-bottom:60px;
+}
+
+/* CARDS */
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:28px;
+}
+
+.card{
+
+    background:rgba(23,23,23,0.75);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 0 35px rgba(0,229,255,0.25);
+}
+
+.card img{
+
+    width:100%;
+    height:260px;
+
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card-content h3{
+
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.card-content p{
+
+    color:#cfcfcf;
+
+    line-height:1.7;
+}
+
+.tag{
+
+    margin-top:16px;
+
+    color:#00ff9d;
+
+    font-size:20px;
+    font-weight:700;
+}
+
+/* ABOUT */
+
+.about{
+
+    margin-top:90px;
+
+    background:rgba(23,23,23,0.75);
+
+    backdrop-filter:blur(10px);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+}
+
+.about h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+}
+
+.about p{
+
+    color:#d0d0d0;
+
+    line-height:1.9;
+
+    font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:80px;
+
+    background:#050505;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    color:#888;
+}
+
+/* FLOAT BTN */
+
+.float-btn{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    z-index:999;
+}
+
+.float-btn a{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    background:linear-gradient(90deg,#00e5ff,#00ff9d);
+
+    color:black;
+
+    box-shadow:
+    0 0 20px #00e5ff,
+    0 0 40px #00e5ff;
+
+    animation:float 2s infinite;
+}
+
+/* ANIMATION */
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #00e5ff;
+    }
+
+    to{
+        text-shadow:0 0 25px #00ff9d;
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes animate{
+
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-10vh) scale(1);
+        opacity:0;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title{
+        font-size:36px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PARTICLES -->
+
+<div class="particles"></div>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="hero">
+
+        <h1>
+            MK Affiliate Hub 🚀
+        </h1>
+
+        <p>
+            Tổng hợp thời trang,
+            công nghệ,
+            gia dụng và sản phẩm hot trend đáng mua nhất hiện nay.
+            Click vào sản phẩm để xem tại trang bán hàng chính thức 🔥
+        </p>
+
+        <a href="https://collshp.com/minhkhoa2206362?view=storefront"
+        class="hero-btn"
+        target="_blank">
+
+            KHÁM PHÁ NGAY
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- PRODUCTS -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Danh Mục Nổi Bật ✨
+    </h2>
+
+    <div class="cards">
+
+        <!-- THỜI TRANG -->
+
+        <a href="https://collshp.com/minhkhoa2206362?view=storefront"
+        target="_blank"
+        style="text-decoration:none;color:white;">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+
+                    <h3>Thời Trang</h3>
+
+                    <p>
+                        Outfit trendy,
+                        local brand và phong cách hiện đại.
+                    </p>
+
+                    <div class="tag">
+                        FASHION
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        <!-- CÔNG NGHỆ -->
+
+        <a href="https://collshp.com/minhkhoa2206362?view=storefront"
+        target="_blank"
+        style="text-decoration:none;color:white;">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+
+                    <h3>Công Nghệ</h3>
+
+                    <p>
+                        Gadget,
+                        phụ kiện setup và tiện ích công nghệ.
+                    </p>
+
+                    <div class="tag">
+                        TECH
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        <!-- GIA DỤNG -->
+
+        <a href="https://collshp.com/minhkhoa2206362?view=storefront"
+        target="_blank"
+        style="text-decoration:none;color:white;">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+
+                    <h3>Gia Dụng</h3>
+
+                    <p>
+                        Đồ dùng tiện ích,
+                        sản phẩm thông minh cho gia đình.
+                    </p>
+
+                    <div class="tag">
+                        HOME
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        <!-- GAMING -->
+
+        <a href="https://collshp.com/minhkhoa2206362?view=storefront"
+        target="_blank"
+        style="text-decoration:none;color:white;">
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+
+                    <h3>Gaming Setup</h3>
+
+                    <p>
+                        Gear gaming,
+                        LED RGB và setup cực chill.
+                    </p>
+
+                    <div class="tag">
+                        GAMING
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div class="about">
+
+        <h2>
+            Affiliate Marketing
+        </h2>
+
+        <p>
+            Đây là website tiếp thị liên kết.
+            Khi nhấn vào sản phẩm,
+            hệ thống sẽ chuyển bạn đến trang bán hàng chính thức để xem và đặt mua.
+            Tụi mình sẽ nhận hoa hồng nhỏ từ đơn hàng —
+            hoàn toàn không làm tăng giá sản phẩm ✨
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 MK Affiliate Hub | Powered by Minh Khoa 💎
+
+</footer>
+
+<!-- FLOAT BUTTON -->
+
+<div class="float-btn">
+
+    <a href="https://collshp.com/minhkhoa2206362?view=storefront"
+    target="_blank">
+
+        🛒
+
+    </a>
+
+</div>
+
+<!-- PARTICLE SCRIPT -->
+
+<script>
+
+const particles = document.querySelector('.particles');
+
+for(let i = 0; i < 80; i++){
+
+    let span = document.createElement('span');
+
+    let size = Math.random() * 5 + 2;
+
+    span.style.width = size + 'px';
+    span.style.height = size + 'px';
+
+    span.style.left = Math.random() * window.innerWidth + 'px';
+
+    span.style.animationDuration =
+    (Math.random() * 10 + 10) + 's';
+
+    span.style.animationDelay =
+    Math.random() * 5 + 's';
+
+    particles.appendChild(span);
+}
+
+</script>
+
+</body>
+</html>

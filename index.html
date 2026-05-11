@@ -340,23 +340,11 @@ header{
 
     color:#cbd5e1;
 
-    transition:0.35s;
-
-}
-
-.about-box:hover{
-
-    border-color:#00d4ff;
-
-    box-shadow:0 0 35px rgba(0,212,255,0.15);
-
 }
 
 .about-box span{
-
     color:#00d4ff;
     font-weight:700;
-
 }
 
 .about-quote{
@@ -370,8 +358,6 @@ header{
     color:white;
 
     font-style:italic;
-
-    line-height:1.8;
 
 }
 
@@ -389,13 +375,11 @@ header{
     padding:35px;
     border-radius:25px;
     transition:0.35s;
-    backdrop-filter:blur(12px);
 }
 
 .card:hover{
     transform:translateY(-10px);
     border-color:#00d4ff;
-    box-shadow:0 0 35px rgba(0,212,255,0.18);
 }
 
 .card .icon{
@@ -445,7 +429,6 @@ header{
     position:absolute;
     left:21px;
     top:10px;
-    box-shadow:0 0 20px #00d4ff;
 }
 
 .timeline-content{
@@ -460,16 +443,6 @@ header{
     color:#00d4ff;
     font-weight:700;
     margin-bottom:12px;
-}
-
-.timeline-content h3{
-    margin-bottom:12px;
-    font-size:26px;
-}
-
-.timeline-content p{
-    color:#cbd5e1;
-    line-height:1.8;
 }
 
 /* SOCIAL */
@@ -503,7 +476,6 @@ header{
 .social:hover{
     transform:translateY(-10px);
     border-color:#00d4ff;
-    box-shadow:0 0 35px rgba(0,212,255,0.2);
 }
 
 .social-icon{
@@ -539,8 +511,12 @@ header{
     background:#ff9800;
 }
 
-.social h3{
-    margin-bottom:12px;
+.group{
+    background:#7c3aed;
+}
+
+.page{
+    background:#00b894;
 }
 
 .social-text{
@@ -576,22 +552,12 @@ header{
     border-radius:50%;
 
     background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.1);
-
-    backdrop-filter:blur(12px);
 
     display:flex;
     align-items:center;
     justify-content:center;
 
     cursor:pointer;
-
-    transition:0.3s;
-}
-
-.music-player:hover{
-    transform:scale(1.08);
-    border-color:#00d4ff;
 }
 
 .music-icon{
@@ -606,7 +572,6 @@ header{
     justify-content:center;
 
     color:#05111c;
-    font-size:16px;
 }
 
 .music-icon.playing{
@@ -625,16 +590,12 @@ header{
 
 }
 
-/* FOOTER */
-
 footer{
     padding:40px 20px;
     text-align:center;
     border-top:1px solid rgba(255,255,255,0.08);
     color:#94a3b8;
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -644,14 +605,6 @@ footer{
 
 .hero h1{
     font-size:48px;
-}
-
-.hero p{
-    font-size:17px;
-}
-
-.typing{
-    font-size:18px;
 }
 
 .avatar-wrap{
@@ -669,14 +622,6 @@ footer{
     height:170px;
 }
 
-.title h2{
-    font-size:38px;
-}
-
-.quote-box{
-    font-size:18px;
-}
-
 }
 
 </style>
@@ -688,14 +633,14 @@ footer{
 <div id="particles"></div>
 
 <audio id="bgMusic" autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
+<source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-player" onclick="toggleMusic()">
 
-    <div class="music-icon playing" id="musicIcon">
-        <i class="fa-solid fa-music"></i>
-    </div>
+<div class="music-icon playing" id="musicIcon">
+<i class="fa-solid fa-music"></i>
+</div>
 
 </div>
 
@@ -794,15 +739,7 @@ Một chút về bản thân và hành trình phía trước 🚀
 <p>
 Xin chào, mình là <span>Trần Minh Khoa</span> —
 một người theo đuổi lĩnh vực
-<span>Kỹ Thuật Xây Dựng Dân Dụng</span>
-với niềm đam mê về thiết kế, sáng tạo và công nghệ.
-</p>
-
-<br>
-
-<p>
-Với mình, xây dựng không chỉ là dựng nên một công trình,
-mà còn là tạo ra không gian sống mang giá trị lâu dài.
+<span>Kỹ Thuật Xây Dựng Dân Dụng</span>.
 </p>
 
 <div class="about-quote">
@@ -833,25 +770,25 @@ có thể là nền móng cho cả tương lai.”
 <div class="card">
 <div class="icon">🏠</div>
 <h3>Thiết Kế Nhà</h3>
-<p>Thiết kế không gian sống hiện đại và tối ưu công năng.</p>
+<p>Thiết kế không gian sống hiện đại.</p>
 </div>
 
 <div class="card">
 <div class="icon">📐</div>
 <h3>Kỹ Thuật Xây Dựng</h3>
-<p>Chuyên ngành Kỹ Thuật Xây Dựng Dân Dụng.</p>
+<p>Chuyên ngành xây dựng dân dụng.</p>
 </div>
 
 <div class="card">
 <div class="icon">💡</div>
 <h3>Sáng Tạo</h3>
-<p>Luôn tìm ý tưởng mới thay vì đi theo lối mòn.</p>
+<p>Luôn tìm ý tưởng mới.</p>
 </div>
 
 <div class="card">
 <div class="icon">🚀</div>
-<h3>Tư Duy Phát Triển</h3>
-<p>Luôn học hỏi và phát triển bản thân mỗi ngày.</p>
+<h3>Phát Triển</h3>
+<p>Không ngừng học hỏi mỗi ngày.</p>
 </div>
 
 </div>
@@ -873,7 +810,6 @@ có thể là nền móng cho cả tương lai.”
 <div class="timeline">
 
 <div class="timeline-item">
-
 <div class="timeline-dot"></div>
 
 <div class="timeline-content">
@@ -882,9 +818,7 @@ có thể là nền móng cho cả tương lai.”
 2008 - 2013
 </span>
 
-<h3>
-Trường Tiểu Học Ninh Bình
-</h3>
+<h3>Tiểu Học Ninh Bình</h3>
 
 <p>
 Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
@@ -895,7 +829,6 @@ Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
 </div>
 
 <div class="timeline-item">
-
 <div class="timeline-dot"></div>
 
 <div class="timeline-content">
@@ -904,9 +837,7 @@ Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
 2013 - 2017
 </span>
 
-<h3>
-Trường THCS Nguyễn Gia Thiều
-</h3>
+<h3>THCS Nguyễn Gia Thiều</h3>
 
 <p>
 Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
@@ -917,7 +848,6 @@ Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
 </div>
 
 <div class="timeline-item">
-
 <div class="timeline-dot"></div>
 
 <div class="timeline-content">
@@ -926,9 +856,7 @@ Xã Ninh Bình, Thị xã Ninh Hoà, Tỉnh Khánh Hoà
 2017 - 2020
 </span>
 
-<h3>
-Trường THPT Trần Cao Vân
-</h3>
+<h3>THPT Trần Cao Vân</h3>
 
 <p>
 Thị xã Ninh Hoà, Tỉnh Khánh Hoà
@@ -939,7 +867,6 @@ Thị xã Ninh Hoà, Tỉnh Khánh Hoà
 </div>
 
 <div class="timeline-item">
-
 <div class="timeline-dot"></div>
 
 <div class="timeline-content">
@@ -948,9 +875,7 @@ Thị xã Ninh Hoà, Tỉnh Khánh Hoà
 2020 - 2024
 </span>
 
-<h3>
-Đại Học Nha Trang
-</h3>
+<h3>Đại Học Nha Trang</h3>
 
 <p>
 Ngành Kỹ Thuật Xây Dựng (Dân Dụng)
@@ -989,7 +914,39 @@ class="social">
 <h3>Facebook</h3>
 
 <p class="social-text">
-facebook.com
+Trang cá nhân
+</p>
+
+</a>
+
+<a href="https://www.facebook.com/share/1EDbb691qp/?mibextid=wwXIfr"
+target="_blank"
+class="social">
+
+<span class="social-icon page">
+<i class="fa-solid fa-flag"></i>
+</span>
+
+<h3>Facebook Page</h3>
+
+<p class="social-text">
+Trang Page chính thức
+</p>
+
+</a>
+
+<a href="https://www.facebook.com/share/g/18YE2zMzM1/?mibextid=wwXIfr"
+target="_blank"
+class="social">
+
+<span class="social-icon group">
+<i class="fa-solid fa-users"></i>
+</span>
+
+<h3>Facebook Group</h3>
+
+<p class="social-text">
+Cộng đồng nhóm
 </p>
 
 </a>
@@ -1067,12 +1024,6 @@ là người dám đặt viên gạch đầu tiên.”
 “Đừng sợ đi chậm.
 Chỉ sợ đứng yên.”
 
-<br><br>
-
-“Một ngày nào đó,
-những điều từng bị xem là viển vông
-sẽ trở thành thứ khiến người khác ngước nhìn.”
-
 </div>
 
 </div>
@@ -1086,8 +1037,6 @@ sẽ trở thành thứ khiến người khác ngước nhìn.”
 </footer>
 
 <script>
-
-/* TYPING */
 
 const text = [
 "Kỹ Sư Xây Dựng",
@@ -1128,8 +1077,6 @@ setTimeout(type,80);
 
 })();
 
-/* PARTICLES */
-
 const particles = document.getElementById("particles");
 
 for(let i=0;i<70;i++){
@@ -1153,15 +1100,11 @@ particles.appendChild(particle);
 
 }
 
-/* MUSIC */
-
 const music = document.getElementById("bgMusic");
 const musicIcon = document.getElementById("musicIcon");
 const waves = document.querySelectorAll(".music-wave");
 
 let isPlaying = true;
-
-/* MUSIC FALLBACK */
 
 music.addEventListener("error", () => {
 
@@ -1173,8 +1116,6 @@ music.load();
 music.play().catch(() => {});
 
 });
-
-/* AUTOPLAY */
 
 window.addEventListener("load", () => {
 
@@ -1195,8 +1136,6 @@ music.play();
 }
 
 });
-
-/* TOGGLE MUSIC */
 
 function toggleMusic(){
 

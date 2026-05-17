@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Shopee Product Tool</title>
+
+<style>
+
+body{
+    background:#0f172a;
+    color:white;
+    font-family:Arial;
+    padding:40px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:14px 25px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+.card{
+    margin-top:30px;
+    background:#1e293b;
+    padding:20px;
+    border-radius:20px;
+}
+
+img{
+    width:250px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+pre{
+    background:black;
+    padding:15px;
+    border-radius:12px;
+    overflow:auto;
+}
+
+</style>
+</head>
+<body>
+
+<h1>🔥 Tool Lấy Sản Phẩm Shopee</h1>
+
+<input
+type="text"
+id="link"
+placeholder="Dán link Shopee tại đây">
+
+<button onclick="getProduct()">
+Lấy Sản Phẩm
+</button>
+
+<div id="result"></div>
+
+<script>
+
+async function getProduct(){
+
+    const link =
+    document.getElementById("link").value;
+
+    // lấy itemid và shopid
+    const regex =
+    /product\/(\d+)\/(\d+)/;
+
+    const match =
+    link.match(regex);
+
+    if(!match){
+
+        alert("Link không hợp lệ");
+        return;
+    }
+
+    const shopid = match[1];
+    const itemid = match[2];
+
+    const api =
+    `https://shopee.vn/api/v4/item/get?itemid=${itemid}&shopid=${shopid}`;
+
+    try{
+
+        const res =
+        await fetch(api);
+
+        const data =
+        await res.json();
+
+        console.log(data);
+
+        const item =
+        data.data.item;
+
+        const image =
+        `https://cf.shopee.vn/file/${item.image}`;
+
+        document.getElementById("result")
+        .innerHTML = `
+
+        <div class="card">
+
+            <h2>
+                ${item.name}
+            </h2>
+
+            <h3>
+                💰 ${(item.price/100000).toLocaleString('vi-VN')}đ
+            </h3>
+
+            <img src="${image}">
+
+            <p style="margin-top:20px">
+                ⭐ Đã bán:
+                ${item.historical_sold}
+            </p>
+
+            <p>
+                🏪 Shop ID:
+                ${item.shopid}
+            </p>
+
+            <br>
+
+            <button onclick="window.open('${link}')">
+                🛒 Mở Shopee
+            </button>
+
+            <h3 style="margin-top:25px">
+                JSON:
+            </h3>
+
+            <pre>
+${JSON.stringify(item,null,2)}
+            </pre>
+
+        </div>
+
+        `;
+
+    }catch(err){
+
+        console.log(err);
+
+        alert(
+            "Shopee chặn CORS 😢 chạy bằng localhost hoặc backend NodeJS nhé"
+        );
+    }
+}
+
+</script>
+
+</body>
+</html>
